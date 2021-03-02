@@ -1,0 +1,7 @@
+BlazoriseDemo/.vs/**
+BlazoriseDemo/Client/bin/**
+BlazoriseDemo/Client/obj/**
+BlazoriseDemo/Server/bin/**
+BlazoriseDemo/Server/obj/**
+BlazoriseDemo/Shared/bin/**
+BlazoriseDemo/Shared/obj/**
