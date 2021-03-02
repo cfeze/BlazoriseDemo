@@ -1,15 +1,52 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
-
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
-
-    <div class="content px-4">
-        @Body
-    </div>
-</div>
+<Layout Sider="true">
+    <LayoutSider>
+        <LayoutSiderContent>
+            <Bar Breakpoint="Breakpoint.Desktop" NavigationBreakpoint="Breakpoint.Tablet" ThemeContrast="ThemeContrast.Dark"
+                 Mode="BarMode.VerticalInline" CollapseMode="BarCollapseMode.Small">
+                <BarToggler />
+                <BarBrand>
+                    <BarItem>
+                        <BarLink To="">
+                            BlazorDemo
+                        </BarLink>
+                    </BarItem>
+                </BarBrand>
+                <BarMenu>
+                    <BarStart>
+                        <BarItem>
+                            <BarLink To="">
+                                <BarIcon IconName="IconName.Home" />
+                                Home
+                            </BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarLink To="counter">
+                                <BarIcon IconName="IconName.PlusSquare" />
+                                Counter
+                            </BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarLink To="fetchdata">
+                                <BarIcon IconName="IconName.Poll" />
+                                Fetch Data
+                            </BarLink>
+                        </BarItem>
+                    </BarStart>
+                </BarMenu>
+            </Bar>
+        </LayoutSiderContent>
+    </LayoutSider>
+    <Layout>
+        <LayoutHeader Fixed="true">
+            <Bar Breakpoint="Breakpoint.Desktop" Background="Background.Primary" ThemeContrast="ThemeContrast.Light">
+                Header
+                <BarToggler />
+            </Bar>
+        </LayoutHeader>
+        <LayoutContent Padding="Padding.Is4.OnX">
+            @Body
+        </LayoutContent>
+    </Layout>
+</Layout>
