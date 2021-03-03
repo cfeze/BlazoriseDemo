@@ -40,8 +40,14 @@
     </LayoutSider>
     <Layout>
         <LayoutHeader Fixed="true">
-            <Bar Breakpoint="Breakpoint.Desktop" Background="Background.Primary" ThemeContrast="ThemeContrast.Light">
-                Header
+            <Bar @bind-Visible="layoutHeaderBarVisible" Breakpoint="Breakpoint.Desktop" Background="Background.Primary" ThemeContrast="ThemeContrast.Light">
+                <BarBrand>
+                    <BarItem>
+                        <BarLink To="">
+                            <Text Color="TextColor.Dark">Brand Section</Text>
+                        </BarLink>
+                    </BarItem>
+                </BarBrand>
                 <BarToggler />
             </Bar>
         </LayoutHeader>
@@ -50,3 +56,7 @@
         </LayoutContent>
     </Layout>
 </Layout>
+
+@code{
+    private bool layoutHeaderBarVisible = false;
+}
